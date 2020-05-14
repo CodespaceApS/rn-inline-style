@@ -30,7 +30,8 @@ module.exports = (customStyles = {}) => {
       .reduce((acc, x) => {
         if (styles[x]) {
           const styleArg = props[x] === true ? null : props[x]
-          const [styleKey, value] = styles[x](styleArg)
+          const _args = isNaN(parseFloat(styleArg)) ? styleArg : parseFloat(styleArg)
+          const [styleKey, value] = styles[x](_args)
           if (Array.isArray(styleKey)) {
             styles[x](styleArg).forEach((x) => {
               const [subStyleKey, subValue] = x
