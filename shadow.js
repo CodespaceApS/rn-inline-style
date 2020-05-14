@@ -11,9 +11,9 @@ const calcShadow = no => {
 
 module.exports = {
   shadow: (x = 1) => [
-    ['elevation', x],
+    ['elevation', x || 1],
     ['shadowColor', ' #000'],
     ['shadowOpacity', 0.24],
-    ['shadowOffset', calcShadow(x)],
+    ['shadowOffset', calcShadow(x || 1)],
   ]
 }
