@@ -98,8 +98,8 @@ import initInline from 'rn-inline-style'
 
 const inline = initInline({
   'dp': _ => [
-    ['paddingLeft', '10px'],
-    ['paddingRight', '10px']
+    ['paddingLeft', 10],
+    ['paddingRight', 10]
   ]
 })
 ```
