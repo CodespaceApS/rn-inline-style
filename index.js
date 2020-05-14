@@ -2,8 +2,8 @@ const preStyles = require('./styles')
 
 module.exports = (customStyles = {}) => {
   const styles = {
-    ...customStyles,
-    ...preStyles
+    ...preStyles,
+    ...customStyles
   }
 
   return (allProps) => {
