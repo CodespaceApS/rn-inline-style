@@ -1,9 +1,9 @@
-const styles = require('./styles')
+const preStyles = require('./styles')
 
 module.exports = (customStyles = {}) => {
   const styles = {
     ...customStyles,
-    ...styles
+    ...preStyles
   }
 
   return (allProps) => {
@@ -33,7 +33,7 @@ module.exports = (customStyles = {}) => {
           const _args = isNaN(parseFloat(styleArg)) ? styleArg : parseFloat(styleArg)
           const [styleKey, value] = styles[x](_args)
           if (Array.isArray(styleKey)) {
-            styles[x](styleArg).forEach((x) => {
+            styles[x](_args).forEach((x) => {
               const [subStyleKey, subValue] = x
               acc.style[subStyleKey] = subValue
             })
