@@ -10,16 +10,13 @@ module.exports = {
     ['left', 0],
   ],
   bg: (x) => ['backgroundColor', x || 'green'],
-  reset: (x) => [
-    ['margin', 0],
-    ['padding', 0],
-    ['outline', 0],
-  ],
   h: x => ['height', x],
   centerCenter: (x) => [['justifyContent', 'center'], ['alignItems', 'center']],
   startCenter: (x) => [['justifyContent', 'flex-start'], ['alignItems', 'center']],
   startStart: (x) => [['justifyContent', 'flex-start'], ['alignItems', 'flex-start']],
   w: x => ['width', x],
+  wrap: () => ['flexWrap', 'wrap'],
+  display: (x) => ['display', x || 'flex'],
   flex: (x) => ['flex', x || '1'],
   ...shadow
 }

@@ -1,19 +1,29 @@
 const calcShadow = no => {
   switch (no) {
     case 1:
-      return `0px 0.5px; shadow-radius: 0.75px`
+      return [
+        ['shadowOffset', '0'],
+        ['shadowRadius', 0.75]
+      ]
     case 2:
-      return `0px 0.75px; shadow-radius: 1.5px`
+      return [
+        ['shadowOffset', '0 0.75'],
+        ['shadowRadius', 1, 5]
+      ]
     default:
-      return `0px ${no - 1}px; shadow-radius: ${no}px`
+      return [
+        ['shadowOffset', `0 ${no - 1}`],
+        ['shadowRadius', no]
+      ]
   }
 }
+
 
 module.exports = {
   shadow: (x = 1) => [
     ['elevation', x || 1],
     ['shadowColor', ' #000'],
     ['shadowOpacity', 0.24],
-    ['shadowOffset', calcShadow(x || 1)],
+    ...calcShadow(x || 1)
   ]
 }
